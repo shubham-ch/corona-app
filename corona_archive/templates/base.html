@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="header">
+        <ul class="horizontal-list">
+            <li style="float:left">
+                <a href="{{ url_for('index') }}">
+                    <img src=" {{ url_for('static', filename='images/logo_white.png') }} " alt="Corona Archive" class="header_logo">
+                </a>
+            </li>
+            {% block header_item %}{% endblock %}
+        </ul>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>

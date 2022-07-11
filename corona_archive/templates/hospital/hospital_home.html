@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hospital_home.css') }}">
+    {% endblock %}
+
+    {% block header_item %}
+        <li>
+            <a href="{{ url_for('logout') }}" class="header_item">Log out</a>
+        </li>
+    {% endblock %}
+
+    {% block body %}
+        <div class="body">
+            <h1>Hospital's homepage</h1>
+            <div class="body_container">
+                <div
+                    class="form_container">
+                    <!-- <p>hello
+                                          {{ session['id'] }}</p> -->
+                    <h2>Mark Patient infected</h2>
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <label>
+                            {{ form.citizen_ID.label }}
+                            :
+                        </label>
+                        {{ form.citizen_ID(class="form_textField") }}
+
+                        {{ form.submit(class="submit_button") }}
+
+                    </form>
+                </div>
+
+                <div class="table_container">
+                    <h2>Citizens</h2>
+                    <table class="infected_table">
+                        <thead>
+                            <tr>
+                                {% for param in params %}
+                                    <th>{{ param }}</th>
+                                {% endfor %}
+                                <th>Change Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in datas %}
+                                <tr>
+                                    {% for cell in data %}
+                                        <td>{{ cell }}</td>
+                                    {% endfor %}
+                                        <td>
+                                            <button type="button" class="btn btn-primary"><a href="/not_infected/{{data[0]}}">Change</a></button>
+                                        </td>
+                                </tr>
+                                
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}

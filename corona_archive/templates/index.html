@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    {% endblock %}
+
+    {% block header_item %}
+        <li>
+            <a href="{{ url_for('AgentLogin') }}" class="header_item">Agents</a>
+        </li>
+        <li>
+            <a href="{{ url_for('HospitalLogin') }}" class="header_item">Hospitals</a>
+        </li>
+    {% endblock %}
+
+    {% block body %}
+        <div class="body">
+            <h1>Let's put an end to corona</h1>
+            <p>Corona Archive is supposed to be a web service for tracking, displaying, evaluating, and
+                            archiving of the Corona infections in a particular location. T</p>
+
+            <h2>Want to check-in to a place</h2>
+            <a href="{{ url_for('registerVisitor') }}">Register as a visitor →</a>
+
+            <h2>Want to register your place</h2>
+            <a href="{{ url_for('registerPlace') }}">Register as a place owner →</a>
+        </div>
+    {% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+        {% endblock %}
+
+        {% block header_item %}
+            <li>
+                <a href="{{ url_for('logout') }}" class="header_item">Log out</a>
+            </li>
+        {% endblock %}
+
+        {% block body %}
+            <div class="body_scan_page">
+                <div id="session_device_value" style="visibility: hidden;">{{ session['device_id'] }}</div>
+                {% if checked_in %}
+                    <h1>
+                        You have checked in successfully!</h1>
+                    <div class="check_in_detail_container">
+                        <p>Place:
+                            <span id="session_value">{{ session['place'] }}</span>
+                        </p>
+                        <p>Device:
+                            <span>{{ session['device_id'] }}</span>
+                        </p>
+
+                        <p>Device:
+                            <span>{{ session["id"] }}</span>
+                        </p>
+
+                        <p>check-in time:<span id="check-in_time">{{ session['check-in_time'] }}</span>
+                        </p>
+                        <P>total time after check-in:<span id="timer"/>
+                        </P>
+                        <button id="check_out_button" style="height: 40px;">
+                            Click Here to check out</button>
+                    </div>
+
+                    <script>
+
+                        const check_out_button = document.getElementById('check_out_button');
+
+                        check_out_button.addEventListener("click", function () {
+                            console.log("Enetering inside clickedddd function")
+                            let formData = new FormData();
+                            let place_id = document.getElementById('session_value').innerHTML;
+                            formData.append('type', 'check-out');
+                            formData.append('qr_data', place_id);
+                            fetch("/visitor_home", {
+                                body: formData,
+                                method: "post"
+                            }).then(response => {
+                                console.log("response: ", response);
+                                window.location.reload(true)
+                            })
+                        })
+                        var countDownDate = new Date(document.getElementById("check-in_time").innerHTML).getTime();
+                        // var countDownDate = new Date("2022-03-31T00:01:17").getTime();
+
+
+                        // Update the count down every 1 second
+                        var x = setInterval(function () { // Get today's date and time
+                            var now = new Date().getTime();
+                            var distance = now - countDownDate;
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                            // Display the result in the element with id="demo"
+                            document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+                        }, 1000);
+                    </script>
+                {% else %}
+                    <div class="scanner_container">
+                        <div id="qr-reader" style="width: 600px;height: 300px;"></div>
+                    </div>
+
+                    <script src="../static/js/visitor_home.js"></script>
+                    <script>
+                        function onScanSuccess(decodedText, decodedResult) { // console.log(`Code scanned = ${decodedText}`, decodedResult);
+                            let device_id = document.getElementById('session_device_value').innerHTML
+                            let formData = new FormData();
+                            formData.append('type', 'check-in');
+                            formData.append('qr_data', decodedText);
+                            formData.append('device_id', device_id)
+
+                            fetch("/visitor_home", {
+                                body: formData,
+                                method: "post"
+                            }).then(response => {
+                                console.log("response: ", response);
+                                window.location.reload(true)
+                            })
+                        }
+
+                        var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
+                            fps: 10,
+                            qrbox: 250
+                        });
+                        html5QrcodeScanner.render(onScanSuccess);
+                    </script>
+                {% endif %}
+            </div>
+        {% endblock %}

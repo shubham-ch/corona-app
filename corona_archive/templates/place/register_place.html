@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+        {% endblock %}
+
+        {% block body %}
+            <div class="body" style="padding-left: 33%; padding-right: 33%;">
+                <div class="form_container">
+                    <form action="{{ url_for('registerPlace') }}" method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <h1>Register your place</h1>
+
+                        {% if error %}
+                            <p style="color: red;">
+                                Registration failed. Please try again!</p>
+                        {% endif %}
+
+                        <p>
+                            {{ form.place_name.label }}
+                        </p>
+                        {{ form.place_name(class="form_textField") }}
+
+                        <p>
+                            {{ form.address.label }}
+                        </p>
+                        {{ form.address(class="form_textField") }}<br>
+
+                            <div style="text-align: right;cursor: pointer;">
+                                {{ form.submit(class="submit") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endblock %}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    font-weight: 400;
+}
+
+.header {
+    height: 70px;
+    background: #272a35;
+}
+
+.header_logo {
+    height: 70px;
+    padding-left: 10px;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal-list > li {
+    float: right;
+}
+
+.horizontal-list > li > a {
+    float: right;
+    text-decoration: none;
+}
+
+.header_item {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 26px;
+}

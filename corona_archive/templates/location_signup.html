@@ -1,0 +1,34 @@
+{% extends "auth_layout.html" %}
+{% block right_button %}<a class="active" href={{url_for('logout')}}>Sign In</a>{% endblock %}
+{% block content %}
+    <form method="POST">
+        {{form.hidden_tag()}}
+        <h1>
+            Location Sign up
+        </h1>
+        <div class="content">
+            <div class="input-field">
+                {{form.username}}
+            </div>
+            <div class="input-field">
+                {{form.address}}
+            </div>
+            <div class="input-field">
+                {{form.email}}
+            </div>
+            <div class="input-field">
+                {{form.phone_no}}
+            </div>
+            <div class="input-field">
+                {{form.password}}
+            </div>
+            <div class="input-field">
+                {{form.confirmpassword}}
+            </div>
+        </div>
+        <div class="action">
+            <button href={{url_for('signup_location')}} class="main_button">Sign In</button>
+            {{form.submit(class="main_button")}}
+        </div>
+    </form>
+{% endblock %}

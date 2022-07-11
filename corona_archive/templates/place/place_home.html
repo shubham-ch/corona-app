@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block header_item%}
+<li><a href="{{ url_for('logout') }}" class="header_item">Log out</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="body" style="text-align: center;">
+    <div class="qr_code">
+        <h1 style="padding-bottom: 35px;"> {{ session['place_name'] }} </h1>
+        
+        <img src="{{ qr_code }}" alt="QR code"><br>
+
+        <a href="{{ url_for('download_qr_code') }}" download="Your_QR_code.png">
+            <div>Download your QR code</div>
+        </a>
+    </div>
+</div>
+{% endblock %}

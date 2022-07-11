@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="body" style="padding-left: 33%; padding-right: 33%;">
+    <div class="form_container">
+        <form action="{{ url_for('HospitalLogin') }}" method="POST">
+            {{ form.hidden_tag() }}
+
+            <h1>Login as a hospital</h1>
+
+            {% if error %} <p style="color: red;"> Login failed. Please try again!</p> {% endif %}
+
+            <p> {{ form.hospital_email.label }}  </p>
+            {% if 'hospital_email' in request.cookies %}
+                {{request.cookies.get('hospital_email')}}
+            {% endif %}
+            {{ form.hospital_email(class="form_textField") }}
+
+            <p> {{ form.password.label }} </p>
+            {% if 'password' in request.cookies %}
+                {{request.cookies.get('password')}}
+            {% endif %}
+            {{ form.password(class="form_textField") }}<br>
+
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    
+                    <input type="checkbox" name="inputRemember" class="custom-control-input" id="customControlInline">
+
+                    <label class="custom-control-label" for="customControlInline">Remember Me</label>
+            </div>
+
+            <div style="text-align: right;">
+                {{ form.submit(class="submit") }}
+            </div>
+
+            <p style="text-align: center;">
+                ——————— or request to register ———————
+            </p>
+
+            <a href="{{ url_for('HospitalRequest') }}" style="text-decoration: none;">
+                <div class="submit">Request to register →</div>
+            </a>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

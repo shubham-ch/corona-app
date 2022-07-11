@@ -1,0 +1,127 @@
+.body_scan_page {
+  border: 1px solid;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: #d9f0ff;
+  color: white;
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.432), rgba(0, 0, 0, 0.466)), url(../images/covid_image.jpg);
+  background-size:100% 100%;
+  height: 100%;
+}
+
+.body_scan_page > h1 {
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+.body_scan_page > p {
+  font-size: 20px;
+  padding-bottom: 30px;
+  font-weight: 400;
+}
+
+.body_scan_page > h2 {
+  font-size: 28px;
+  padding-bottom: 25px;
+  padding-top: 50px;
+}
+
+.body_scan_page > a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #58cb05;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+}
+
+.form_container {
+  /* background-color: hsla(224, 15%, 14%, 0.527) ; */
+  background-color: #272a35;
+  padding: 40px;
+  border-radius: 50px;
+  color: white;
+}
+
+.form_container > form > h1 {
+  font-size: 36px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.scanner_container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.form_container > form > p {
+  font-size: 14px;
+  padding-bottom: 8px;
+  padding-top: 20px;
+}
+
+.form_textField {
+  height: 40px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+}
+
+.form_fileUpload {
+  font-size: 16px;
+  padding: 10px 0px;
+}
+
+.submit {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #58cb05;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+}
+
+.check_in_detail_container {
+  background-color: aliceblue;
+  box-shadow: -8px 5px 9px 0 #6e7076;
+  text-align: center;
+}
+
+.check_in_detail_container > p {
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.check_in_detail_container span {
+  padding-left: 10px;
+}
+
+#check_out_button {
+  height: 40px !important;
+  margin-bottom: 20px;
+  padding-inline: 20px;
+  background-color: rgb(47 182 233);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+#check_out_button:hover {
+  background-color: black;
+  color: white;
+}

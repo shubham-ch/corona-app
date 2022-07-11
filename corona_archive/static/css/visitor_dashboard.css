@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #8fbee5;
+  background-image: url(image/covid_image.jpg);
+  font-family: "Rubik", sans-serif;
+  background: #8fbee5;
+  background-image: url(image/covid_image.jpg);
+  font-family: "Rubik", sans-serif;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li:nth-child(odd) {
+  float: left;
+}
+
+li:nth-child(even) {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.qr_code_wrap {
+  margin-top: 60px;
+  width: 500px;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.qr_code {
+  width: 100%;
+  padding: 25px;
+  background-color: rgb(85, 199, 199);
+}
+
+.button {
+  background-color: white; 
+  border: none;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 12px;
+  cursor: pointer;
+  border: 2px solid black
+}
+
+.input-field{
+  padding: 8px 8px;
+}
+
+.input {
+  padding: 8px 8px;
+  width: 310px;
+}
+
+.content{
+	max-width: 350px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 4px 8px;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.check{
+  margin: 4px 40px;
+}
+
+.checkbox{
+  margin: 8px 
+}
+
+.button2{
+  background-color: white; 
+  border: none;
+  color: black;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 12px;
+  cursor: pointer;
+  border: 2px solid black
+}

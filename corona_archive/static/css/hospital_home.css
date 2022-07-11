@@ -1,0 +1,105 @@
+.body {
+  background-color: #d9f0ff;
+  color: white;
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.432), rgba(0, 0, 0, 0.466)), url(../images/covid_image.jpg);
+  background-size:100% 100%;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  height: 100%;
+  width: 100%;
+}
+h1 {
+  /* background-color: aqua; */
+  text-align: center;
+}
+
+.body_container {
+  /* background-color: rgb(26, 74, 116); */
+  /* border: 2px solid; */
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+.form_container {
+  /* background-color: chartreuse; */
+  margin: 0;
+  font-size: 20px;
+  /* height: 100%; */
+}
+
+.form_textField {
+  width: 40rem;
+  /* background-color: cyan; */
+  border-radius: 1rem;
+  height: 3rem;
+  font-size: 16px;
+  /* margin-right: 2rem; */
+}
+
+.submit_button {
+  width: 20rem;
+  border-radius: 1rem;
+  height: 3rem;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.submit_button:hover {
+  background-color: black;
+  color: white;
+}
+
+.table_container {
+  border: 2px solid;
+  width: 80%;
+  height: 500px;
+  margin-inline: auto;
+  text-align: center;
+  box-shadow: 8px 8px 5px 0 rgb(72, 72, 75);
+  overflow-y: auto;
+}
+
+.table_container > h2 {
+  margin-bottom: 2rem;
+}
+
+table {
+  border: 2px solid;
+  margin: auto;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.infected_table td,
+.infected_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+tbody tr {
+  background-color: rgb(101, 171, 180);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #8b8383;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f1f1;
+}
+
+tbody tr:hover {
+  background-color: rgb(101, 171, 180);
+}
+
+.infected_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}

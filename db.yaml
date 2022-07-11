@@ -1,0 +1,4 @@
+{mysql_host: "localhost",
+   mysql_user: "team32",
+   mysql_password: "team32",
+   mysql_db: "seteam32"}

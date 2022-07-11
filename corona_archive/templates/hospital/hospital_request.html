@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="body" style="padding-left: 33%; padding-right: 33%;">
+    
+    <div class="form_container" style="margin-top: 100px;">
+        <form action="{{ url_for('HospitalRequest') }}" method="POST">
+            {{ form.hidden_tag() }}
+            <h1>Hospital registration request</h1>
+
+            <p> {{ form.hospital_email.label }} </p>
+            {{ form.hospital_email(class="form_textField") }}
+
+            <div style="text-align: right;">
+                {{ form.submit(class="submit") }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

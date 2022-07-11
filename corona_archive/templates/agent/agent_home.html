@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agent_home.css') }}">
+    {% endblock %}
+
+    {% block header_item %}
+        <li>
+            <a href="{{ url_for('logout') }}" class="header_item">Log out</a>
+        </li>
+    {% endblock %}
+
+
+    {% block body %}
+        <div class="body">
+            <h1>Agent's homepage</h1>
+            <div class="body_container">
+                <div
+                    class="form_container">
+                    <!-- <p>hello
+                   {{ session['id'] }}</p> -->
+                    <h3>Add Hospital</h3>
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+                        <div>
+                            <p>
+                                {{ form.hospital_email.label }}
+                            </p>
+                            {{ form.hospital_email(class="form_textField") }}
+                        </div>
+                        <div>
+                            <p>
+                                {{ form.hospital_pswrd.label }}
+                            </p>
+                            {{ form.hospital_pswrd(class="form_textField") }}
+                        </div>
+                        {{ form.submit(class="submit_button") }}
+
+
+                    </form>
+                </div>
+
+                <div class="table_container">
+                    <table class="hospital_table">
+                        <h2>Non Approved Hospitals</h2>
+                        <tr class="head_row">
+                            {% for param in params %}
+                                <th>{{ param }}</th>
+                                
+                            {% endfor %}
+                            <th>Approve</th>
+                            <!-- <th>Change Status</th> -->
+                        </tr>
+                        {% for data in datas %}
+                            <tr>
+                                {% for cell in data %}
+                                    <td>{{ cell }}</td>    
+                                {% endfor %}
+                                <td>
+                                    <button type="button" class="btn btn-primary"><a href="/approved/{{data[0]}}">Approve</a></button>
+                                </td>
+                            </tr>
+                            <!-- <td><button type="button" class="btn btn-primary"><a href="/approved/{{data[0]}}">Approve</a></button></td> -->
+                                    
+                        {% endfor %}
+                                
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}

@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+attrs==21.4.0
+autopep8==1.6.0
+bcrypt==3.2.2
+cffi==1.15.0
+click==8.0.4
+=======
+pytest==6.0.2
+flask-bcrypt==1.0.1
+flask-login==0.5.0
+flask-qrcode==2.0.0
+>>>>>>> 0a0f7407a20c98496ad01177496ceeba1b9f1357
+Flask==2.0.3
+Flask-Bcrypt==1.0.1
+Flask-Login==0.6.1
+Flask-MySQLdb==1.0.1
+Flask-QRcode==3.0.0
+Flask-WTF==1.0.0
+iniconfig==1.1.1
+itsdangerous==2.1.1
+Jinja2==3.0.3
+MarkupSafe==2.1.1
+more-itertools==8.12.0
+mysqlclient==2.1.0
+<<<<<<< HEAD
+numpy==1.22.3
+opencv-python==4.5.5.64
+packaging==21.3
+Pillow==9.1.0
+pluggy==0.13.1
+py==1.11.0
+pycodestyle==2.8.0
+pycparser==2.21
+pyparsing==3.0.8
+pytest==6.0.2
+PyYAML==5.4.1
+qrcode==7.3.1
+toml==0.10.2
+Werkzeug==2.0.3
+WTForms==2.3.3
+wtforms-html5==0.6.1
+=======
+click==8.0.4
+flask-wtf==1.0.0
+WTForms==2.3.3
+PyYaml==5.4.1
+opencv-python==4.5.5.64
+>>>>>>> 0a0f7407a20c98496ad01177496ceeba1b9f1357
