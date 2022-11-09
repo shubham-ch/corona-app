@@ -1,22 +1,5 @@
 # README for # CoronaArchive
 
-### Contributors
-
-Sprint 1
-
-- Sandip Sah
-- Ilayda Güner
-
-Sprint 3
-
-- Idris Chendid
-- Pandey Abhilekh
-
-Sprint 4
-
-- Shubham Kumar Chaurasia
-- Zheng Hong Maoqi Zhu
-
 ## About the Project
 
 The purpose of this project is to build a web service for Corona disease management which
